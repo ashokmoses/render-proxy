@@ -1,0 +1,17 @@
+:80 {
+  handle_path /code-server/* {
+    reverse_proxy https://vs.rohityerra.xyz {
+      transport http {
+        versions h2c 1.1
+      }
+    }
+  }
+
+  handle_path /projects/* {
+    reverse_proxy https://liweb.rohityerra.xyz {
+      transport http {
+        versions h2c 1.1
+      }
+    }
+  }
+}
